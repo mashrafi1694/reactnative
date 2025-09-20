@@ -1,0 +1,35 @@
+{
+  "cli": {
+    "version": ">= 16.19.2",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "distribution": "internal",
+      "developmentClient": true,
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "developmentClient": false,
+      "autoIncrement": true,
+      "android": {
+        "buildType": "apk",
+        "distribution": "store"
+      },
+      "env": {
+        "EAS_BUILD_GRADLE_ARGS": "-Dorg.gradle.jvmargs=-Xmx8g"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
