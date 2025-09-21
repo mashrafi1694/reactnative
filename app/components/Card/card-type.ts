@@ -3,8 +3,8 @@ interface ICard {
   title: string;
   description: string;
   price: number;
-  count: number;
-  rate: number;
+  // count: number;
+  // rate: number;
   isDeleted?: boolean;
   handelPress?: () => void;
   handelDlete?: () => void;

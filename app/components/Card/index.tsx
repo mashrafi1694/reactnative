@@ -7,15 +7,15 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { AirbnbRating } from "react-native-ratings";
+// import { AirbnbRating } from "react-native-ratings";
 
 export default function Card({
   image = "",
   title = "",
   description = "",
   price,
-  count,
-  rate,
+  // count,
+  // rate,
   handelPress,
   handelDlete,
   isDeleted = false,
@@ -32,7 +32,11 @@ export default function Card({
         )}
 
         <View>
-          <Image src={image} style={styles.productImage} resizeMode="center" />
+          <Image
+            source={{ uri: image }}
+            style={styles.productImage}
+            resizeMode="center"
+          />
         </View>
         <View>
           <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">
@@ -49,9 +53,9 @@ export default function Card({
           </Text>
         </View>
         <View>
-          <Text style={styles.price}>{`$${price}`}</Text>
+          <Text style={styles.price}>{`$${Number(price)}`}</Text>
         </View>
-        <View style={styles.rateContainer}>
+        {/* <View style={styles.rateContainer}>
           <Text style={styles.rating}>
             {" "}
             <AirbnbRating
@@ -69,7 +73,7 @@ export default function Card({
             />
           </Text>
           <Text>{count}</Text>
-        </View>
+        </View> */}
       </View>
     </TouchableOpacity>
   );
@@ -77,11 +81,15 @@ export default function Card({
 const styles = StyleSheet.create({
   container: {
     position: "relative",
-    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
     paddingHorizontal: 20,
     marginHorizontal: 20,
     borderRadius: 7,
     marginVertical: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.25,
+    shadowRadius: 2.84,
+    elevation: 5,
   },
   productImage: {
     width: "100%",
@@ -96,13 +104,13 @@ const styles = StyleSheet.create({
   description: {
     textAlign: "justify",
     fontSize: 14,
-    fontWeight: 400,
+    fontWeight: "400",
   },
   price: {
     fontSize: 18,
     fontWeight: "bold",
     textAlign: "center",
-    marginTop: 15,
+    marginVertical: 15,
   },
   rateContainer: {
     display: "flex",

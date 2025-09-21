@@ -10,7 +10,7 @@ export default function CartScreen({ navigation }) {
   useEffect(() => {
     (async () => {
       const getData = await AsyncStorage.getItem("cart");
-      const convertToObj = JSON.parse(getData);
+      const convertToObj = getData ? JSON.parse(getData) : [];
       if (convertToObj) {
         setData(convertToObj);
       }
@@ -39,14 +39,15 @@ export default function CartScreen({ navigation }) {
     <View style={styles.container}>
       <FlatList
         data={data}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <Card
             title={item.title}
             image={item.image}
             description={item.description}
             price={item.price}
-            count={item.rating.count}
-            rate={item.rating.rate}
+            // count={item.rating.count}
+            // rate={item.rating.rate}
             handelPress={() =>
               navigation.navigate("ProductDetail", { product: item })
             }

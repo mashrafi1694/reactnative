@@ -18,10 +18,10 @@ const styles = StyleSheet.create({
     width: "80%",
     height: 150,
     position: "absolute",
-    left: "50%",
+    alignSelf: "center",
     top: "50%",
+    marginTop: -75,
     backgroundColor: "#000814",
-    transform: "translate(-50%,-50%)",
     borderRadius: 10,
   },
   wrapper: {

@@ -25,6 +25,7 @@
       "favicon": "./app/assets/image/favicon.png"
     },
     "plugins": [
+      "./app/native-plugins/injectedAndroidConfig.js",
       [
         "expo-build-properties",
         {
@@ -36,12 +37,11 @@
         }
       ]
     ],
+    "owner": "m.ashrafi",
     "extra": {
       "eas": {
-        "projectId": "2b916102-7832-47ee-a5d6-b119a9ec539f"
+        "projectId": "7439ddc0-8fe2-4c9a-bf62-681d1843589e"
       }
-    },
-    "owner": "m.ashrafi",
-    "jsEngine": "hermes"
+    }
   }
 }

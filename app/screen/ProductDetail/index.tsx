@@ -1,10 +1,9 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import { AirbnbRating } from "react-native-ratings";
 import { customToast } from "../../components/customToast";
 export default function ProductDetail({ route }) {
-  const { image, title, description, rating, price } = route.params.product;
+  const { image, title, description, price } = route.params.product;
 
   async function handelAddCart() {
     const cartItem = route.params.product;
@@ -23,7 +22,11 @@ export default function ProductDetail({ route }) {
   return (
     <View style={styles.container}>
       <View>
-        <Image src={image} style={styles.productImage} resizeMode="center" />
+        <Image
+          source={{ uri: image }}
+          style={styles.productImage}
+          resizeMode="center"
+        />
       </View>
       <View>
         <Text style={styles.title}>{title}</Text>
@@ -32,9 +35,9 @@ export default function ProductDetail({ route }) {
         <Text style={styles.description}>{description}</Text>
       </View>
       <View>
-        <Text style={styles.price}>{`$${price}`}</Text>
+        <Text style={styles.price}>{`$${Number(price)}`}</Text>
       </View>
-      <View style={styles.rateContainer}>
+      {/* <View style={styles.rateContainer}>
         <Text style={styles.rating}>
           {" "}
           <AirbnbRating
@@ -52,7 +55,7 @@ export default function ProductDetail({ route }) {
           />
         </Text>
         <Text>{rating.count}</Text>
-      </View>
+      </View> */}
       <Pressable onPress={handelAddCart}>
         <View style={styles.cart}>
           <Ionicons name="cart-outline" size={24} color="black" />
@@ -104,5 +107,6 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 20,
   },
 });

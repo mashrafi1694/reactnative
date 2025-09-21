@@ -4,7 +4,6 @@ import Card from "../../components/Card";
 import CustomLoading from "../../components/CustomLoading";
 
 export default function ProductScreen({ navigation }) {
-  navigation.set;
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -22,14 +21,15 @@ export default function ProductScreen({ navigation }) {
       {loading && <CustomLoading loading={loading} />}
       <FlatList
         data={data}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <Card
             title={item.title}
             image={item.image}
             description={item.description}
             price={item.price}
-            count={item.rating.count}
-            rate={item.rating.rate}
+            // count={item.rating.count}
+            // rate={item.rating.rate}
             handelPress={() =>
               navigation.navigate("ProductDetail", { product: item })
             }
