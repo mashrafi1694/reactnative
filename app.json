@@ -25,7 +25,8 @@
       "favicon": "./app/assets/image/favicon.png"
     },
     "plugins": [
-      [
+            "./app/native-plugins/injectedAndroidConfig.js",
+     [
         "expo-build-properties",
         {
           "android": {
