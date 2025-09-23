@@ -30,11 +30,9 @@
         "expo-build-properties",
         {
           "android": {
-            "compileSdkVersion": 34,
             "enableProguardInReleaseBuilds": true,
             "enableSeparateBuildPerCPUArchitecture": true,
-            "usesCleartextTraffic": true,
-            "ndkVersion": "26.3.11579264"
+            "usesCleartextTraffic": true
           }
         }
       ]
@@ -42,7 +40,7 @@
     "owner": "m.ashrafi",
     "extra": {
       "eas": {
-        "projectId": "7439ddc0-8fe2-4c9a-bf62-681d1843589e"
+        "projectId": "cc2cc890-f870-4b3f-8453-afa30fc951ad"
       }
     }
   }
