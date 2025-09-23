@@ -12,7 +12,6 @@ export default function HomeScreen({ navigation }) {
   }, [navigation]);
   return (
     <Tab.Navigator
-      id={null}
       initialRouteName="products"
       screenOptions={({ route }) => ({
         headerShown: false,
@@ -21,7 +20,7 @@ export default function HomeScreen({ navigation }) {
         tabBarActiveBackgroundColor: "#caf0f8",
         tabBarLabelStyle: {
           fontSize: 12,
-          fontWeight: '900',
+          fontWeight: "900",
         },
         tabBarIcon: ({ color, size }) => {
           let iconName;

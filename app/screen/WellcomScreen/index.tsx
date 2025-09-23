@@ -2,12 +2,15 @@ import { useEffect, useRef } from "react";
 import {
   BackHandler,
   Button,
+  Dimensions,
   ImageBackground,
   StyleSheet,
   View,
 } from "react-native";
 import Toast from "react-native-toast-message";
 import ScreenLayout from "../../components/ScreenLayout";
+
+const { width } = Dimensions.get("window");
 export default function WellconScreen({ navigation }) {
   const backPressCount = useRef(0);
 
@@ -94,6 +97,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 10,
     width: "90%",
-    transform: "translate(5%,0%)",
+    transform: [{ translateX: width * 0.05 }],
   },
 });

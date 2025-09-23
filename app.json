@@ -30,9 +30,11 @@
         "expo-build-properties",
         {
           "android": {
+            "compileSdkVersion": 34,
             "enableProguardInReleaseBuilds": true,
             "enableSeparateBuildPerCPUArchitecture": true,
-            "usesCleartextTraffic": true
+            "usesCleartextTraffic": true,
+            "ndkVersion": "26.3.11579264"
           }
         }
       ]

@@ -32,25 +32,6 @@ module.exports = function withAndroidStrategiesPlugin(config) {
       );
     }
 
-    // اضافه کردن linker flag برای page size = 64KB
-    if (!config.modResults.contents.includes("-Wl,-z,max-page-size=65536")) {
-      config.modResults.contents = config.modResults.contents.replace(
-        /android\s*{([\s\S]*?)}/,
-        (match, p1) => `
-          android {
-              ${p1}
-              defaultConfig {
-                  externalNativeBuild {
-                      cmake {
-                          arguments "-Wl,-z,max-page-size=65536"
-                      }
-                  }
-              }
-          }
-        `
-      );
-    }
-
     return config;
   });
 };

@@ -53,7 +53,7 @@ export default function Card({
           </Text>
         </View>
         <View>
-          <Text style={styles.price}>{`$${Number(price)}`}</Text>
+          <Text style={styles.price}>{`$${price.toString()}`}</Text>
         </View>
         {/* <View style={styles.rateContainer}>
           <Text style={styles.rating}>

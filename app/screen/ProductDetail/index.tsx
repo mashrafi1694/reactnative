@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   description: {
     textAlign: "justify",
     fontSize: 14,
-    fontWeight: 400,
+    fontWeight: "400",
   },
   price: {
     fontSize: 18,

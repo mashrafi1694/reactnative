@@ -2,6 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import {
   Button,
+  Dimensions,
   ImageBackground,
   StyleSheet,
   Text,
@@ -28,6 +29,7 @@ const schema = z.object({
   // .regex(/[0-9]/, "رمز عبور باید حداقل یک عدد داشته باشد")
   // .regex(/[@$!%*?&#]/, "رمز عبور باید حداقل یک کاراکتر خاص داشته باشد"),
 });
+const { width, height } = Dimensions.get("window");
 
 export default function LoginScreen({ navigation }) {
   const {
@@ -113,6 +115,7 @@ export default function LoginScreen({ navigation }) {
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}
+                secureTextEntry
               />
             )}
           />
@@ -134,11 +137,10 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   wrapperForm: {
-    width: "90%",
+    width: width * 0.9,
     position: "absolute",
-    left: "50%",
-    top: "50%",
-    transform: [{ translateX: -180 }, { translateY: -150 }],
+    left: width / 2 - 180,
+    top: height / 2 - 150,
   },
 
   textInputContainer: {
